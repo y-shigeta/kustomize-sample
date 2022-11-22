@@ -1,0 +1,18 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: portal-nginx
+#  namespace: example
+spec:
+  selector:
+    matchLabels:
+      run: portal-nginx
+  template:
+    metadata:
+      labels:
+        run: portal-nginx
+      spec:
+        containers:
+          - name: nginx
+            image: nginx
