@@ -16,8 +16,8 @@ spec:
         run: portal-nginx
     spec:
       containers:
-        - name: nginx
-          image: nginx
+        - name: apache
+          image: apache
 # RolloutsでBlue/Green deploymentを実装できるように追記
   strategy:
     blueGreen: 
