@@ -1,7 +1,0 @@
----
-apiVersion: apps/v1
-kind: Serrvice
-metadata:
-  name: portal-nginx
-spec:
-  type: ClusterIP
