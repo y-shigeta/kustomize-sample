@@ -12,7 +12,7 @@ spec:
     metadata:
       labels:
         run: portal-nginx
-      spec:
-        containers:
-          - name: nginx
-            image: nginx
+    spec:
+      containers:
+        - name: nginx
+          image: nginx

@@ -8,6 +8,5 @@ metadata:
 spec:
   ports:
     - port: 80
-  protocol: TCP
   selector:
     run: portal-nginx
