@@ -5,3 +5,4 @@ bases:
 
 patchesStrategicMerge:
   - deployment.yaml
+  - rollout-transform.yaml
