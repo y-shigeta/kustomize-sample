@@ -1,6 +1,9 @@
 ---
-apiVersion: apps/v1
-kind: Deployment
+# RolloutsでBlue/Green deploymentを実装できるように以下２行編集
+apiVersion: argoproj.io/v1alpha1 
+kind: Rollout 
+# apiVersion: apps/v1
+# kind: Deployment
 metadata:
   name: portal-nginx
 spec:
