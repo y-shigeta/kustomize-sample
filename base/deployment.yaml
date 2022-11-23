@@ -6,14 +6,16 @@ kind: Rollout
 # kind: Deployment
 metadata:
   name: portal-nginx
+  labels:
+    app: portal-nginx
 spec:
   selector:
     matchLabels:
-      run: portal-nginx
+      app: portal-nginx
   template:
     metadata:
       labels:
-        run: portal-nginx
+        app: portal-nginx
     spec:
       containers:
         - name: nginx

@@ -14,6 +14,8 @@ kind: Service
 apiVersion: v1
 metadata:
   name: rollout-bluegreen-active
+  labels:
+    app: portal-nginx
 spec:
   selector:
     app: portal-nginx
@@ -27,6 +29,8 @@ kind: Service
 apiVersion: v1
 metadata:
   name: rollout-bluegreen-preview
+  labels:
+    app: portal-nginx
 spec:
   selector:
     app: portal-nginx

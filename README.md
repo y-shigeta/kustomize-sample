@@ -17,8 +17,8 @@ touch overlays/{prd,dev}/kustomization.yml
 ## Usage
 - 適用済のManifestとOverlayを比較する
 kubectl diff -k [overlaysのdirpath]
-- 
-kubectl kustomize [overlaysのdirpath]
-- 
-kubectl apply -k [overlaysのdirpath]
+- 標準出力にManifestを表示
+kustomize build [overlaysのdirpath]
+- 標準出力に表示されたManifestをApply
+kustomize build [overlaysのdirpath] | kubeclt apply -f -
 
