@@ -1,7 +1,7 @@
 ---
 # RolloutsでBlue/Green deploymentを実装できるように以下２行編集
-apiVersion: argoproj.io/v1alpha1 
-kind: Rollout 
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
 # apiVersion: apps/v1
 # kind: Deployment
 metadata:
@@ -16,11 +16,14 @@ spec:
         run: portal-nginx
     spec:
       containers:
-        - name: apache
-          image: apache
-# RolloutsでBlue/Green deploymentを実装できるように追記
+        - name: nginx
+          image: nginx
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 80
+  # RolloutsでBlue/Green deploymentを実装できるように追記
   strategy:
-    blueGreen: 
+    blueGreen:
       # 本番アクセス用のServiceの名前
       activeService: rollout-bluegreen-active
       # Previewアクセス用のServiceの名前
