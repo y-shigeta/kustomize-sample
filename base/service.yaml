@@ -1,12 +1,37 @@
 ---
-apiVersion: v1
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  name: portal-nginx
+#  labels:
+#    run: portal-nginx
+#spec:
+#  ports:
+#    - port: 80
+#  selector:
+#    run: portal-nginx
 kind: Service
+apiVersion: v1
 metadata:
-  name: portal-nginx
-  labels:
-    run: portal-nginx
+  name: rollout-bluegreen-active
 spec:
-  ports:
-    - port: 80
   selector:
-    run: portal-nginx
+    app: portal-nginx
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: rollout-bluegreen-preview
+spec:
+  selector:
+    app: portal-nginx
+  type: LoadBalancer
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
