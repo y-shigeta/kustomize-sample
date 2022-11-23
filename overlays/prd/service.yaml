@@ -1,6 +1,6 @@
 ---
-apiVersion: apps/v1
-kind: Serrvice
+apiVersion: v1
+kind: Service
 metadata:
   name: portal-nginx
 spec:
